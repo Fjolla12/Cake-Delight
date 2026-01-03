@@ -18,6 +18,7 @@ A website about cakes with recipes, gallery, tips, and contact page. Built with 
 - `recipes.html` – Recipes
 - `contact.html` – Contact
 - `subscribe.html` – Subscribe form
+- `tips.html` – Tips & Tricks
 
 ## How to run
 1. Open `index.html` in your browser.
