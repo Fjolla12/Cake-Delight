@@ -3,17 +3,22 @@ document.addEventListener("DOMContentLoaded", function () {
   const emailInput = document.getElementById("email");
   const formResponse = document.getElementById("formResponse");
 
-  subscribeForm.addEventListener("submit", function (event) {
-    event.preventDefault();
-    
-    const email = emailInput.value.trim();
-    if (validateEmail(email)) {
-      formResponse.innerHTML = `<p class="text-success">Thank you for subscribing! Check your inbox for updates.</p>`;
-      emailInput.value = "";
-    } else {
-      formResponse.innerHTML = `<p class="text-danger">Please enter a valid email address.</p>`;
-    }
-  });
+  if(subscribeForm){
+    subscribeForm.addEventListener("submit",function(event){
+      event.preventDefault();
+      
+      const email=emailInput.value.trim();
+      if(validateEmail(email)){
+        formResponse.innerHTML='<p class="text-success">Thank you for subscribing! Check your inbox for updates. </p>';
+        emailInput.value="";
+      }else{
+        formResponse.innerHTML='<p class="text-danger">Please enter a valid email address.</p>';
+
+      }
+
+    });
+  }
+ 
 
   function validateEmail(email) {
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
